@@ -1,0 +1,159 @@
+.container {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    background: var(--bg-soft);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.sidebar {
+    width: 280px;
+    background: white;
+    padding: 2rem;
+    border-right: 1px solid #eee;
+}
+
+.profileInfo {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.avatar {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.profileInfo h3 {
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.profileInfo p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav button {
+    padding: 1rem;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav button:hover, .nav button.active {
+    background: var(--bg-soft);
+    color: var(--primary);
+}
+
+.nav button.logoutBtn {
+    margin-top: 2rem;
+    color: #d9534f;
+}
+
+.nav button.logoutBtn:hover {
+    background: #fdf7f7;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 3rem 5%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header h2 {
+    color: var(--primary);
+}
+
+.appointmentsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.emptyState {
+    background: white;
+    padding: 4rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    color: var(--text-muted);
+}
+
+.appointmentCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border: 1px solid #f1f5f9;
+}
+
+.aptHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status.pending { background: #fff3cd; color: #856404; }
+.status.approved { background: #d4edda; color: #155724; }
+.status.completed { background: #cce5ff; color: #004085; }
+.status.cancelled { background: #f8d7da; color: #721c24; }
+
+.date {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.aptBody p {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+.aptBody strong {
+    color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+}

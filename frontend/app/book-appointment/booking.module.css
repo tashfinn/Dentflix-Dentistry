@@ -1,0 +1,87 @@
+.container {
+    padding: 4rem 10%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-soft);
+}
+
+.card {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    width: 100%;
+    max-width: 600px;
+}
+
+.card h2 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.formGroup input[type="date"],
+.formGroup select,
+.formGroup textarea {
+    padding: 0.875rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.paymentOptions {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 500 !important;
+}
+
+.dummyPaymentIcons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+.error {
+    color: #d9534f;
+    background: #fdf7f7;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #d9534f;
+}
