@@ -1,7 +1,8 @@
 .container {
     display: flex;
     min-height: calc(100vh - 80px);
-    background: #f8fafc;
+    background: var(--bg-alt);
+    font-family: inherit;
 }
 
 .loading {
@@ -14,10 +15,11 @@
 }
 
 .sidebar {
-    width: 250px;
-    background: #1e293b;
+    width: 260px;
+    background: var(--primary);
     color: white;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.05);
 }
 
 .profileInfo {
@@ -26,60 +28,81 @@
 }
 
 .avatar {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
+    background: rgba(255,255,255,0.1);
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profileInfo h3 {
+    color: white;
+    font-size: 1.2rem;
 }
 
 .profileInfo p {
-    color: #94a3b8;
+    color: rgba(255,255,255,0.7);
     font-size: 0.9rem;
+    margin-top: 0.2rem;
 }
 
 .nav {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .nav button {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     text-align: left;
     background: transparent;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
-    color: #cbd5e1;
+    color: rgba(255,255,255,0.7);
     cursor: pointer;
     font-weight: 500;
-    transition: all 0.2s;
+    transition: var(--transition);
 }
 
 .nav button:hover, .nav button.active {
-    background: #334155;
+    background: rgba(255,255,255,0.15);
     color: white;
+    transform: translateX(5px);
 }
 
 .nav button.logoutBtn {
-    margin-top: auto;
-    color: #f87171;
+    margin-top: 3rem;
+    color: #ff6b6b;
 }
 
 .nav button.logoutBtn:hover {
-    background: rgba(248, 113, 113, 0.1);
+    background: rgba(255, 107, 107, 0.15);
+    color: #ff4757;
 }
 
 .mainContent {
     flex: 1;
-    padding: 3rem;
+    padding: 3rem 4rem;
     overflow-y: auto;
 }
 
 .header {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header h2 {
-    color: #0f172a;
+    font-size: 2rem;
+    color: var(--primary);
 }
 
 .statsGrid {
@@ -90,60 +113,92 @@
 
 .statCard {
     background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border-left: 5px solid var(--secondary);
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
 }
 
 .statCard h3 {
-    color: #64748b;
-    font-size: 1rem;
-    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
 .statValue {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--primary);
 }
 
 .tableContainer {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--card-shadow);
     overflow-x: auto;
+    padding: 1rem;
 }
 
 .table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
 .table th, .table td {
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 1.5rem;
     text-align: left;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid var(--bg-alt);
 }
 
 .table th {
-    background: #f8fafc;
-    color: #475569;
+    background: var(--bg-soft);
+    color: var(--text-muted);
     font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.table th:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.table th:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.table td {
+    color: var(--text-main);
+}
+
+.table tr:last-child td {
+    border-bottom: none;
 }
 
 .statusBadge {
-    padding: 0.25rem 0.75rem;
+    padding: 0.4rem 1rem;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
 }
 
 .statusBadge.pending { background: #fff3cd; color: #856404; }
-.statusBadge.approved { background: #d4edda; color: #155724; }
-.statusBadge.completed { background: #cce5ff; color: #004085; }
-.statusBadge.cancelled { background: #f8d7da; color: #721c24; }
+.statusBadge.approved { background: #d1fae5; color: #065f46; }
+.statusBadge.completed { background: #dbeafe; color: #1e40af; }
+.statusBadge.cancelled { background: #fee2e2; color: #991b1b; }
 
 .actionBtns {
     display: flex;
@@ -151,14 +206,54 @@
 }
 
 .actionBtns button, .completeBtn {
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
     font-size: 0.85rem;
     font-weight: 600;
+    transition: var(--transition);
 }
 
 .approveBtn { background: #10b981; color: white; }
+.approveBtn:hover { background: #059669; }
+
 .cancelBtn { background: #ef4444; color: white; }
-.completeBtn { background: #3b82f6; color: white; }
+.cancelBtn:hover { background: #dc2626; }
+
+.completeBtn { background: var(--secondary); color: white; }
+.completeBtn:hover { background: var(--secondary-hover); }
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+    .profileInfo {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    .nav {
+        flex-direction: row;
+    }
+    .nav button.logoutBtn {
+        margin-top: 0;
+    }
+    .mainContent {
+        padding: 2rem;
+    }
+}

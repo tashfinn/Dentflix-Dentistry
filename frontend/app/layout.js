@@ -1,32 +1,23 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { AuthProvider } from '../context/AuthContext';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Dentflix Dentistry | Modern Dental Clinic",
-  description: "Best Dental Clinic | Expert Dentist Care in Dhaka. Book your appointment today.",
+  title: "Dentflix Dentistry | Premium Dental Care",
+  description: "Modern, professional dental clinic and patient portal",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
+    <html lang="en">
+      <body className={inter.className}>
         <AuthProvider>
           <Navbar />
-          <main>
+          <main style={{ minHeight: '80vh' }}>
             {children}
           </main>
           <Footer />
